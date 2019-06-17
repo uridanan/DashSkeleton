@@ -1,0 +1,28 @@
+# SETUP
+# TODO: document all the pips I've needed
+# pip install --upgrade google-auth
+# pip install visdcc
+# Setup google authentication in the google developer console: https://console.developers.google.com/apis/
+
+#=======================================================================================================================
+# WHAT THIS IS
+# This is a skeleton dash app with an HTML landing page for Google Signin
+# The GoogleOAuth implementation signed you in without even asking you or telling you where you were
+
+# HOW THIS WORKS
+# Use a top level flask server route to redirect non authenticated users to a regular HTML page and prompt for Google Signin
+# Upon authentication in the HTML page, post the googleToken to the a dedicate flask server route and authenticate server side
+# If the authentication is successful open a session and redirect to main dash app, otherwise redirect to Signin page
+# If the user clicks on logout in your app, redirect to /revoke. This will revoke the session and redirect to the signin page
+
+#=======================================================================================================================
+
+# Useful links:
+# http://flask.pocoo.org/docs/0.12/quickstart/
+# https://dash.plot.ly/urls
+# https://dash.plot.ly/authentication
+# https://google-auth.readthedocs.io/en/latest/
+# http://flask.pocoo.org/docs/0.12/api/#flask.request
+# TODO: read this and rethink my approach. See if I need to redo anything
+# https://developers.google.com/identity/protocols/OAuth2WebServer#tokenrevoke
+# TODO: Setup Google cross account protection https://developers.google.com/identity/risc
